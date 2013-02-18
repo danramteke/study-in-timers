@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface DRViewController : UIViewController
-
+-(IBAction)startTimer:(id)sender;
 @end

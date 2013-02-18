@@ -26,4 +26,22 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(IBAction)startTimer:(id)sender {
+    UIApplication* app = [UIApplication sharedApplication];
+    if ([app scheduledLocalNotifications] > 0) [app cancelAllLocalNotifications];
+    
+
+    UILocalNotification* alarm = [[UILocalNotification alloc] init] ;
+    if (alarm)
+    {
+        alarm.fireDate = [NSDate dateWithTimeIntervalSinceNow:5];
+        alarm.timeZone = [NSTimeZone defaultTimeZone];
+        alarm.repeatInterval = 0;
+        alarm.soundName = UILocalNotificationDefaultSoundName;
+        alarm.alertBody = @"Timer is done!";
+        
+        [app scheduleLocalNotification:alarm];
+    }
+}
+
 @end
