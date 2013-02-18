@@ -9,5 +9,16 @@
 #import <UIKit/UIKit.h>
 
 @interface DRViewController : UIViewController
+
+@property (nonatomic, strong) IBOutlet UIButton *startButton;
+@property (nonatomic, strong) IBOutlet UILabel *timeLabel;
+@property (nonatomic, strong) NSDateFormatter *dateFormatter;
+
+@property (nonatomic, strong) NSDate *startTime;
+@property (nonatomic, strong) NSDate *endTime;
+
+@property (nonatomic, strong) NSTimer *pollingTimer;
+
 -(IBAction)startTimer:(id)sender;
+-(void)receiveTimerTick;
 @end

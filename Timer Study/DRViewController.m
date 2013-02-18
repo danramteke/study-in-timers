@@ -17,7 +17,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+	
+    [self.startButton setTitle:@"Timing..." forState:UIControlStateDisabled];
+    [self.startButton setTitleColor:[UIColor lightGrayColor] forState:UIControlStateDisabled];
+    [self.startButton setTitle:@"Start Timer" forState:UIControlStateNormal];
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -26,8 +30,55 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)receiveTimerTick {
+    
+    unsigned int unitFlags =  NSMinuteCalendarUnit | NSSecondCalendarUnit ;
+    
+    NSDate* now = [NSDate date];
+    if ([self.endTime timeIntervalSinceDate:now] < 0 ) {
+        [self timerDidStop];
+    } else {
+    
+    
+        NSDateComponents *breakdownInfo = [[NSCalendar currentCalendar]
+                                       components:unitFlags
+                                       fromDate:now
+                                       toDate:self.endTime
+                                       options:0
+                                       ];
+
+    
+        self.timeLabel.text = [NSString stringWithFormat:@"%02d:%02d",
+                               [breakdownInfo minute],
+                               [breakdownInfo second]
+                               ];
+    }
+}
+
+-(void)timerDidStop {
+    self.timeLabel.text = @"Done!";
+    [self.startButton setEnabled:YES];
+    [self.pollingTimer invalidate];
+}
+
 -(IBAction)startTimer:(id)sender {
     NSLog(@"Starting timer...");
+
+    self.startTime = [NSDate date];
+    self.endTime = [NSDate dateWithTimeInterval:5 sinceDate:self.startTime];
+
+    NSLog(@" button state is %d", self.startButton.state);
+    [self.startButton setEnabled:NO];
+    NSLog(@" button state is %d", self.startButton.state);
+
+    
+    _pollingTimer = [NSTimer scheduledTimerWithTimeInterval:0.1
+                                                    target:self
+                                                  selector:@selector(receiveTimerTick)
+                                                  userInfo:nil
+                                                   repeats:YES];
+    
+    
     UIApplication* app = [UIApplication sharedApplication];
     if ([app scheduledLocalNotifications] > 0) [app cancelAllLocalNotifications];
     
@@ -35,7 +86,7 @@
     UILocalNotification* alarm = [[UILocalNotification alloc] init] ;
     if (alarm)
     {
-        alarm.fireDate = [NSDate dateWithTimeIntervalSinceNow:5];
+        alarm.fireDate = self.endTime;
         alarm.timeZone = [NSTimeZone defaultTimeZone];
         alarm.repeatInterval = 0;
         alarm.soundName = @"donetimer.aiff";

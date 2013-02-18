@@ -25,13 +25,27 @@
                                     <action selector="startTimer:" destination="2" eventType="touchUpInside" id="4kM-HZ-Oap"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Timer time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8E9-TG-QeE">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="87" id="i9v-f7-cTu"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <color key="textColor" red="0.83165258289999999" green="0.32272233049999999" blue="0.45053582190000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="vBf-7W-Mn6" firstAttribute="top" secondItem="3" secondAttribute="top" constant="252" id="XL2-gg-9J3"/>
-                            <constraint firstItem="vBf-7W-Mn6" firstAttribute="centerX" secondItem="3" secondAttribute="centerX" type="default" id="b55-nv-5rh"/>
+                            <constraint firstItem="8E9-TG-QeE" firstAttribute="centerX" secondItem="3" secondAttribute="centerX" type="default" id="9xe-qf-YDj"/>
+                            <constraint firstItem="8E9-TG-QeE" firstAttribute="centerX" secondItem="vBf-7W-Mn6" secondAttribute="centerX" type="default" id="G4w-uo-1wT"/>
+                            <constraint firstItem="vBf-7W-Mn6" firstAttribute="top" secondItem="3" secondAttribute="top" constant="252" type="user" id="XL2-gg-9J3"/>
+                            <constraint firstItem="8E9-TG-QeE" firstAttribute="top" secondItem="3" secondAttribute="top" constant="79" id="bLF-Yu-csx"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="startButton" destination="vBf-7W-Mn6" id="fNO-8c-Qlj"/>
+                        <outlet property="timeLabel" destination="8E9-TG-QeE" id="Bsc-w9-PTP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
             </objects>
@@ -42,6 +56,8 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/DRViewController.h"/>
             <relationships>
                 <relationship kind="action" name="startTimer:"/>
+                <relationship kind="outlet" name="startButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="timeLabel" candidateClass="UILabel"/>
             </relationships>
         </class>
         <class className="NSLayoutConstraint" superclassName="NSObject">
