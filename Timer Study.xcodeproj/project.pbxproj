@@ -23,6 +23,7 @@
 		657FCC5116D2BFA500DD42FE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 657FCC2C16D2BFA500DD42FE /* Foundation.framework */; };
 		657FCC5916D2BFA500DD42FE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 657FCC5716D2BFA500DD42FE /* InfoPlist.strings */; };
 		657FCC5C16D2BFA500DD42FE /* Timer_StudyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 657FCC5B16D2BFA500DD42FE /* Timer_StudyTests.m */; };
+		657FCC6616D2D3FE00DD42FE /* donetimer.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 657FCC6516D2D3FE00DD42FE /* donetimer.aiff */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		657FCC5816D2BFA500DD42FE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		657FCC5A16D2BFA500DD42FE /* Timer_StudyTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Timer_StudyTests.h; sourceTree = "<group>"; };
 		657FCC5B16D2BFA500DD42FE /* Timer_StudyTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Timer_StudyTests.m; sourceTree = "<group>"; };
+		657FCC6516D2D3FE00DD42FE /* donetimer.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = donetimer.aiff; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +132,7 @@
 		657FCC3116D2BFA500DD42FE /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				657FCC6516D2D3FE00DD42FE /* donetimer.aiff */,
 				657FCC3216D2BFA500DD42FE /* Timer Study-Info.plist */,
 				657FCC3316D2BFA500DD42FE /* InfoPlist.strings */,
 				657FCC3616D2BFA500DD42FE /* main.m */,
@@ -237,6 +240,7 @@
 				657FCC3F16D2BFA500DD42FE /* Default@2x.png in Resources */,
 				657FCC4116D2BFA500DD42FE /* Default-568h@2x.png in Resources */,
 				657FCC4416D2BFA500DD42FE /* MainStoryboard.storyboard in Resources */,
+				657FCC6616D2D3FE00DD42FE /* donetimer.aiff in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

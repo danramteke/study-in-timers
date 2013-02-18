@@ -27,6 +27,7 @@
 }
 
 -(IBAction)startTimer:(id)sender {
+    NSLog(@"Starting timer...");
     UIApplication* app = [UIApplication sharedApplication];
     if ([app scheduledLocalNotifications] > 0) [app cancelAllLocalNotifications];
     
@@ -37,7 +38,7 @@
         alarm.fireDate = [NSDate dateWithTimeIntervalSinceNow:5];
         alarm.timeZone = [NSTimeZone defaultTimeZone];
         alarm.repeatInterval = 0;
-        alarm.soundName = UILocalNotificationDefaultSoundName;
+        alarm.soundName = @"donetimer.aiff";
         alarm.alertBody = @"Timer is done!";
         
         [app scheduleLocalNotification:alarm];
