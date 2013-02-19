@@ -47,18 +47,36 @@
     NSLog(@"Got the notification!");
     if( application.applicationState == UIApplicationStateActive) {
 
-        
-        NSURL *url = [NSURL fileURLWithPath:[NSString stringWithFormat:@"%@/%@", [[NSBundle mainBundle] resourcePath], notification.soundName]];
-        NSError *error;
-
-       
-        AVAudioPlayer *audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:&error];
-        audioPlayer.numberOfLoops = 1;
-        
-        NSLog(@"path: %@ ... eerror: %@", url, [error domain]);
-        
-        [audioPlayer play];
+//        NSString* filepath = [[NSBundle mainBundle] pathForResource: @"donetimer" ofType:@"aiff"];
+//        NSURL *url = [[NSURL alloc ]initFileURLWithPath:filepath];
+//        NSError *error;
+//
+//       
+//        AVAudioPlayer *audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:&error];
+//        audioPlayer.delegate = self;
+//        audioPlayer.numberOfLoops = 1;
+//        
+//        NSLog(@"path: %@ ... eerror: %@", url, [error domain]);
+//        [audioPlayer prepareToPlay];
+//        BOOL success = [audioPlayer play];
+//        NSLog(@"was %d %d", YES, success);
     }
 }
+
+- (void)audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag {
+    NSLog(@"did finish playing %d %d", YES, flag);
+}
+
+- (void)audioPlayerEndInterruption:(AVAudioPlayer *)player withOptions:(NSUInteger)flags {
+    NSLog(@"intteruption");
+}
+
+- (void)audioPlayerDecodeErrorDidOccur:(AVAudioPlayer *)player error:(NSError *)error {
+    NSLog(@"error: %@", [error domain]);
+}
+- (void)audioPlayerBeginInterruption:(AVAudioPlayer *)player {
+    NSLog(@"begin intteruption");
+}
+
 
 @end

@@ -22,6 +22,16 @@
     [self.startButton setTitleColor:[UIColor lightGrayColor] forState:UIControlStateDisabled];
     [self.startButton setTitle:@"Start Timer" forState:UIControlStateNormal];
     
+    
+    NSString* filepath = [[NSBundle mainBundle] pathForResource: @"donetimer.aiff" ofType:nil];
+    NSURL *url = [[NSURL alloc ]initFileURLWithPath:filepath];
+    NSError *error;
+    
+    
+    self.audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:&error];
+    self.audioPlayer.volume = 0.9;
+    self.audioPlayer.numberOfLoops = 0;
+    NSLog(@"Error: %@", [error description]);
 }
 
 - (void)didReceiveMemoryWarning
@@ -59,7 +69,9 @@
     self.timeLabel.text = @"Done!";
     [self.startButton setEnabled:YES];
     [self.pollingTimer invalidate];
+    [self.audioPlayer play];
 }
+
 
 -(IBAction)startTimer:(id)sender {
     NSLog(@"Starting timer...");

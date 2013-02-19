@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
 
-@interface DRAppDelegate : UIResponder <UIApplicationDelegate>
+@interface DRAppDelegate : UIResponder <UIApplicationDelegate, AVAudioPlayerDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
