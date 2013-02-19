@@ -101,6 +101,7 @@
         alarm.repeatInterval = 0;
         alarm.soundName = @"donetimer.aiff";
         alarm.alertBody = @"Timer is done!";
+        alarm.alertAction = @"acknowledge";
         
         [app scheduleLocalNotification:alarm];
     }
