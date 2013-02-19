@@ -45,6 +45,20 @@
 
 - (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification{
     NSLog(@"Got the notification!");
+    if( application.applicationState == UIApplicationStateActive) {
+
+        
+        NSURL *url = [NSURL fileURLWithPath:[NSString stringWithFormat:@"%@/%@", [[NSBundle mainBundle] resourcePath], notification.soundName]];
+        NSError *error;
+
+       
+        AVAudioPlayer *audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:&error];
+        audioPlayer.numberOfLoops = 1;
+        
+        NSLog(@"path: %@ ... eerror: %@", url, [error domain]);
+        
+        [audioPlayer play];
+    }
 }
 
 @end

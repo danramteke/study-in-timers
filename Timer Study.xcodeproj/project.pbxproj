@@ -24,6 +24,7 @@
 		657FCC5916D2BFA500DD42FE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 657FCC5716D2BFA500DD42FE /* InfoPlist.strings */; };
 		657FCC5C16D2BFA500DD42FE /* Timer_StudyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 657FCC5B16D2BFA500DD42FE /* Timer_StudyTests.m */; };
 		657FCC6616D2D3FE00DD42FE /* donetimer.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 657FCC6516D2D3FE00DD42FE /* donetimer.aiff */; };
+		657FCC6816D2F5C900DD42FE /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 657FCC6716D2F5C900DD42FE /* AVFoundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		657FCC5A16D2BFA500DD42FE /* Timer_StudyTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Timer_StudyTests.h; sourceTree = "<group>"; };
 		657FCC5B16D2BFA500DD42FE /* Timer_StudyTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Timer_StudyTests.m; sourceTree = "<group>"; };
 		657FCC6516D2D3FE00DD42FE /* donetimer.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = donetimer.aiff; sourceTree = "<group>"; };
+		657FCC6716D2F5C900DD42FE /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				657FCC6816D2F5C900DD42FE /* AVFoundation.framework in Frameworks */,
 				657FCC2B16D2BFA500DD42FE /* UIKit.framework in Frameworks */,
 				657FCC2D16D2BFA500DD42FE /* Foundation.framework in Frameworks */,
 				657FCC2F16D2BFA500DD42FE /* CoreGraphics.framework in Frameworks */,
@@ -108,6 +111,7 @@
 		657FCC2916D2BFA500DD42FE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				657FCC6716D2F5C900DD42FE /* AVFoundation.framework */,
 				657FCC2A16D2BFA500DD42FE /* UIKit.framework */,
 				657FCC2C16D2BFA500DD42FE /* Foundation.framework */,
 				657FCC2E16D2BFA500DD42FE /* CoreGraphics.framework */,

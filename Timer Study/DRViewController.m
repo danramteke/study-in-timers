@@ -65,11 +65,9 @@
     NSLog(@"Starting timer...");
 
     self.startTime = [NSDate date];
-    self.endTime = [NSDate dateWithTimeInterval:5 sinceDate:self.startTime];
+    self.endTime = [NSDate dateWithTimeInterval:2 sinceDate:self.startTime];
 
-    NSLog(@" button state is %d", self.startButton.state);
     [self.startButton setEnabled:NO];
-    NSLog(@" button state is %d", self.startButton.state);
 
     
     _pollingTimer = [NSTimer scheduledTimerWithTimeInterval:0.1
